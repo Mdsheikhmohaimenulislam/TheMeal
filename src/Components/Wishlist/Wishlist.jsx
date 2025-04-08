@@ -1,9 +1,13 @@
-import React from 'react';
 
-const Wishlist = () => {
+
+const Wishlist = ({wishlistItems}) => {
+
+console.log(wishlistItems);
+
     return (
-        <div className='bg-amber-600'>
-            <h1>WishList</h1>
+        <div>
+            <h1 className='text-lg font-bold'>WishList</h1>
+            <hr className='mb-10 mt-5' />
         </div>
     );
 };
