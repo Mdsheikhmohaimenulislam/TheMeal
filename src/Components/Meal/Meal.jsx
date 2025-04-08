@@ -1,10 +1,8 @@
+// import { useState } from "react";
 import { BsExclamationCircle } from "react-icons/bs";
-const Meal = ({ mealDisplay ,handleAddToWishlist}) => {
+const Meal = ({ mealDisplay , handleAddWishList}) => {
 
 
-  const handleAddWishList = () => {
-    handleAddToWishlist(mealDisplay);
-  };
 
 
   return (
@@ -23,7 +21,7 @@ const Meal = ({ mealDisplay ,handleAddToWishlist}) => {
             <p>
             <BsExclamationCircle  className="size-5 text-yellow-500" />
             </p>
-              <button onClick={handleAddWishList} className="btn btn-primary text-black hover:bg-yellow-800 hover:text-white border-none">Order Now</button>
+              <button onClick={()=>handleAddWishList(mealDisplay)} className="btn btn-primary text-black hover:bg-yellow-800 hover:text-white border-none">Order Now</button>
             </div>
           </div>
         </div>

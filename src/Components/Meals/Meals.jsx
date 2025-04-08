@@ -11,24 +11,29 @@ const Meals = () => {
       .then((data) => setMealDisplays(data.categories));
   }, []);
 
+  const [whitelist , setWhiteList]=useState([])
+
+  const handleAddWishList = (food) => {
+    setWhiteList([...whitelist,food]);
+  };
 
   // that component wishlist
-  const [wishlistItems, setWishlistItems] = useState([]);
-  const handleAddToWishlist = (meal) => {
+//   const [wishlistItems, setWishlistItems] = useState([]);
+//   const handleAddToWishlist = (meal) => {
+//     const newItems = [...]
+//   };
 
-    setWishlistItems((prev) => [...prev, meal]);
-  };
 
   return (
 
     <div className="flex w-[95%] mx-auto gap-10">
         <div className="grid grid-cols-2 text-lg m-1 text-center">
           {mealDisplays.map((mealDisplay) => (
-            <Meal key={mealDisplay.idCategory} handleAddToWishlist={handleAddToWishlist} mealDisplay={mealDisplay}></Meal>
+            <Meal key={mealDisplay.idCategory}  handleAddWishList={ handleAddWishList}  mealDisplay={mealDisplay}></Meal>
           ))}
         </div>
         <div className="mx-auto">
-          <Wishlist wishlistItems= {wishlistItems}/>
+          <Wishlist whitelist={whitelist} />
         </div>
     </div>
   );
